@@ -1,0 +1,18 @@
+query GetRegistrations($labelName: String!) {
+  registrations(where: { labelName: $labelName }) {
+    id
+    domain {
+      id
+      name
+      labelName
+      owner {
+        id
+      }
+    }
+    registrationDate
+    expiryDate
+    registrant {
+      id
+    }
+  }
+}
